@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="1Lab">
+    <resource name="FSharpSignatureData.1Lab" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.1Lab" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.1Lab" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.1Lab" action="remove"></resource>
+    <resource name="FSharpOptimizationData.1Lab" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.1Lab" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.1Lab" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.1Lab" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.1Lab" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.1Lab" action="remove"></resource>
+  </assembly>
+</linker>
