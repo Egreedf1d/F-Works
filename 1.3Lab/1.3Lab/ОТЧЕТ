@@ -1,0 +1,26 @@
+MyListFunctions — собственные операции над списками.
+
+addElement list element — добавление в конец. Внутренняя append перекладывает элементы в аккумулятор, в конце возвращает List.rev (element :: acc).
+addFirst list element — добавление в начало через element :: list.
+addAtIndex list index element — вставка по индексу. insertAt накапливает элементы до позиции idx; при idx = 0 вставляет элемент между головой и хвостом. Проверка индекса, иначе failwith.
+removeByValue list value — удаление первого вхождения. removeFirst идёт по списку, при совпадении возвращает List.rev acc @ tail.
+removeAtIndex list index — удаление по индексу. removeAt пропускает элемент на позиции idx. Проверка индекса.
+removeAllByValue list value — удаление всех вхождений. removeAll пропускает все совпадения, накапливает остальные.
+findElement list value — поиск индекса. find идёт со счётчиком, возвращает Some idx или None.
+contains list value — true/false через match по findElement.
+concatenate list1 list2 — сцепка. concat переворачивает списки через аккумулятор, результат разворачивается List.rev.
+getElement list index — элемент по индексу. get уменьшает idx до 0 и возвращает голову; проверка индекса.
+
+Модуль InputValidation — ввод с валидацией.
+
+readInt prompt — печатает приглашение, парсит через Int32.TryParse, при ошибке повторяет (хвостовая рекурсия).
+readIntInRange prompt min max — читает число и проверяет диапазон, иначе повтор.
+readIntList () — построчный ввод до "stop". Внутренняя readElements читает строку, при "stop" возвращает List.rev acc, иначе парсит и добавляет в аккумулятор.
+
+main — точка входа.
+Читает исходный список через readIntList, хранит в currentList.
+Цикл while continueProgram: печатает меню из 11 операций, читает выбор, через if/elif вызывает нужную функцию MyListFunctions, запрашивая параметры через readInt.
+Операции с индексами обёрнуты в try/with (перехват failwith).
+Пункт 9 (сцепка) спрашивает, сохранить ли результат.
+Пункт 0 завершает цикл.
+Возвращает 0.
